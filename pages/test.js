@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Test = (props) => {
   function startPreview() {
     // Default options are marked with *
@@ -10,10 +12,16 @@ const Test = (props) => {
     <>
       <h1>{props.date}</h1>
       {props.preview ? (
-        <button>Exit Preview Mode</button>
+        <>
+          <h2>Hi {props.previewData.username}</h2>
+        </>
       ) : (
         <button onClick={startPreview}>Enter Preview Mode</button>
       )}
+
+      <Link href="/">
+        <a>Back to home page</a>
+      </Link>
     </>
   );
 };
